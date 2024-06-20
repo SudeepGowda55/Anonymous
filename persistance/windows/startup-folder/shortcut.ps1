@@ -1,6 +1,6 @@
 $wsshell = New-Object -ComObject WScript.shell
 
-$shortcutPath = [System.IO.Path]::Combine([Environment]::GetFolderPath('Desktop'), 'Microsoft Edge.lnk')
+$shortcutPath = [System.IO.Path]::Combine([Environment]::GetFolderPath('Startup'), 'Microsoft Edge.lnk')
 
 $shortcut = $wsshell.CreateShortcut($shortcutPath)
 
